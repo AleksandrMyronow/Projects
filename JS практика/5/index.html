@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="block">
+    <p> Верхний правый угол
+        <input type="range" min="0" max="100" value="0" id="rtr" oninput="borderFunc()">
+        <input type="text" id="ttr" oninput="borderFunc()">
+    </p>
+    <p> Нижний правый угол
+        <input type="range" min="0" max="100" value="0" id="rbr" oninput="borderFunc()">
+        <input type="text" id="tbr" oninput="borderFunc()">
+    </p>
+    <p> Нижний левый угол
+        <input type="range" min="0" max="100" value="0" id="rbl" oninput="borderFunc()">
+        <input type="text" id="tbl" oninput="borderFunc()">
+    </p>
+    <p> Верхний левый угол
+        <input type="range" min="0" max="100" value="0" id="rtl" oninput="borderFunc()">
+        <input type="text" id="ttl" oninput="borderFunc()">
+    </p>
+</div>
+<div id="paint">
+
+</div>
+
+<script src = "app.js"></script>
+</body>
+</html>

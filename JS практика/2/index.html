@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--<select name="" id="mySelect" onchange="selectFunction()">-->
+    <!--<option value="">Red</option>-->
+    <!--<option value="">Green</option>-->
+    <!--<option value="">Blue</option>-->
+<!--</select>-->
+<label><input type="range" min="0" max="256" step="1" id="rangeRed" oninput="rangeFunction()">Red</label>
+<label><input type="range" min="0" max="256" step="1" id="rangeGreen" oninput="rangeFunction()">Green</label>
+<label><input type="range" min="0" max="256" step="1" id="rangeBlue" oninput="rangeFunction()">Blue</label>
+<div id="colorPicker"></div>
+
+
+<script src = "app.js"></script>
+</body>
+</html>
