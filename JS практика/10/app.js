@@ -1,29 +1,35 @@
 var Global = {
     //Переменные в едином глобальном объекте
-    num1 : parseInt(document.getElementById("num1").value),
-    num2 : parseInt(document.getElementById("num2").value),
-    result : document.getElementById("result"),
-
-    //Плюсуем
-    plus: function () {
-        var plus = num1 + num2;
-        result.innerHTML = plus;
+    button: document.getElementsByTagName("button"),
+    getValue: function (id) {
+        var el = document.getElementById(id).value;
+        return parseInt(el);
     },
-    //Минусуем
-    minus: function () {
-        var minus = num1 - num2;
-        result.innerHTML = minus;
-    },
-    //Умножаем
-    myltiply: function () {
-        var myltiply = num1 * num2;
-        result.innerHTML = myltiply;
-    },
-    //Делим
-    divid: function () {
-        var devide = num1 / num2;
-        result.innerHTML = devide;
-    }
+    num1: this.getValue("num1"),
+    num2: this.getValue("num2"),
+    inResult: document.getElementById("result").innerHTML
 };
+
+    for(var i = 0; i < Global.button.length; i+=1) {
+        Global.button[i].onclick = function () {
+
+            switch (this.innerHTML) {
+                case "+":
+                    outResult = num1 + num2;
+                    break;
+                case "-":
+                    outResult = num1 - num2;
+                    break;
+                case "*":
+                    outResult = num1 * num2;
+                    break;
+                case "/":
+                    outResult = num1 / num2;
+                    break;
+            }
+            inResult = outResult;
+        }
+    }
+
 
 
