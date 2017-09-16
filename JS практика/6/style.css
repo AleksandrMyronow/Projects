@@ -1,0 +1,26 @@
+.modal {
+    display: none;
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    background-color: rgba(123,214,121,0.7);
+}
+
+.modal-content {
+    background-color: #ffe8be;
+    margin: 25% auto;
+    padding: 13px;
+    border: 1px solid #e4f4b0;
+    width: 80%;
+    border-radius: 15px;
+}
+
+.close {
+    color: crimson;
+    float: right;
+    font-size: 28px;
+    font-weight: 300;
+}
