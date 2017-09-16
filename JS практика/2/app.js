@@ -1,16 +1,21 @@
-// function selectFunction() {
-//     var select = document.getElementById('mySelect').selectedIndex;
-//     var options  = document.getElementById('mySelect').options;
-//     //alert('You choose ' + options[select].text);
-// }
+const colorPicker = document.getElementById('colorPicker');
+const redInput = document.getElementById('rangeRed');
+const greenInput = document.getElementById('rangeGreen');
+const blueInput = document.getElementById('rangeBlue');
 
-function rangeFunction() {
-    var colorPicker = document.getElementById('colorPicker'),
-        redColor = document.getElementById('rangeRed').value,
-        greenColor = document.getElementById('rangeGreen').value,
-        blueColor = document.getElementById('rangeBlue').value,
-        // Как можно смешать три  цвета по типу как в строке ниже но чтобы работало?)
-        newColor = [redColor, greenColor, blueColor];
-        // RGB = [newColor[0].replace(/"/g), newColor[1].replace(/"/g), newColor[2].replace(/"/g)];
-    colorPicker.style.backgroundColor = "green";
+// Функция принимает 3 аргумента (цвета) по схеме RGB (red, green, blue)
+function rangeFunction(red, green, blue) {
+  console.log(red, green, blue)
+    colorPicker.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
 }
+
+// Вовесили события на 3 рейндж поля
+redInput.addEventListener('change', (e) => {
+  rangeFunction(e.currentTarget.value, greenInput.value, blueInput.value);
+});
+greenInput.addEventListener('change', (e) => {
+  rangeFunction(redInput.value, e.currentTarget.value, blueInput.value);
+});
+blueInput.addEventListener('change', (e) => {
+  rangeFunction(redInput.value, greenInput.value, e.currentTarget.value);
+});
