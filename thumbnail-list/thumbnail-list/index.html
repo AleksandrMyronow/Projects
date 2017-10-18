@@ -1,0 +1,221 @@
+<head>
+  <script src="http://fb.me/react-0.13.0.js"></script>
+  <script src="http://fb.me/JSXTransformer-0.13.0.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="scss/style.css">
+</head>
+<body>
+  <header class="top"></header>
+  <div class="container"></div>
+  <footer class="down"></footer>
+</body>
+
+<script type="text/jsx">
+  const Header = React.createClass({
+      render: function() {
+          return <div className="col-sm-12 col-md-12">
+            <div className="header">
+              <ul>
+                <li>{this.props.name}</li>
+                <li>{this.props.menu}</li>
+              </ul>
+            </div>
+          </div>
+      }
+  });
+
+  const Badge = React.createClass({
+    render: function() {
+      return <button className="btn btn-primary" type="button">
+        {this.props.title} <a className="badge">{this.props.number}</a>
+      </button>
+    }
+  });
+
+  const Thumbnail = React.createClass({
+    render: function() {
+      return <div className="col-sm-6 col-md-3">
+        <div className="thumbnail">
+          <img src={this.props.imageUrl} alt="..."></img>
+          <div className="caption">
+            <h3>{this.props.headerz}</h3>
+            <p>{this.props.description}</p>
+            <p>
+              <Badge title={this.props.title}  number={this.props.number} />
+            </p>
+          </div>
+        </div>
+      </div>
+    }
+  });
+
+  const Footer = React.createClass({
+      render: function() {
+          return <div className="col-sm-12 col-md-12">
+            <div className="footer">
+              <p>{this.props.user}</p>
+              <a href={this.props.git}><img className="gitlogo" src={this.props.logo} alt="..."/></a>
+              <p>{this.props.email}</p>
+            </div>
+          </div>
+      }
+  });
+
+  const HeaderList = React.createClass({
+      render: function() {
+          const list = this.props.headerData.map(function(headerProps){
+              return <Header {...headerProps} />
+          });
+          return <div>
+              {list}
+          </div>
+      }
+  });
+
+  const ThumbnailList = React.createClass({
+    render: function() {
+      const list = this.props.thumbnailData.map(function(thumbnailProps){
+        return <Thumbnail {...thumbnailProps} />
+      });
+      return <div>
+        {list}
+      </div>
+    }
+  });
+
+  const FooterList = React.createClass({
+      render: function() {
+          const list = this.props.footerData.map(function(footerProps){
+              return <Footer {...footerProps} />
+          });
+          return <div>
+              {list}
+          </div>
+      }
+  });
+
+  const options = {
+    headerData: [{
+        menu: {
+            lenguage1: ' React ',
+            lenguage2: ' JS ',
+            lenguage3: ' PHP',
+            lenguage4: ' NodeJS ',
+            lenguage5: ' PUG ',
+            lenguage6: ' Gulp ',
+            lenguage7: ' Sass ',
+            lenguage8: ' Symfony ',
+            lenguage9: ' MySQL ',
+            lenguage10: ' MongoDB ',
+            lenguage11: ' Angular ',
+            lenguage12: ' Npm/Yarn',
+        },
+        about: 'About',
+        name: 'ReactPage',
+        contact: 'Contact',
+    }],
+    thumbnailData:  [{
+      title: 'Link for mt project#',
+      number: 'Link#',
+      headerz: 'React',
+      description: '\n' +
+      'There will be a description of projects in which I used the given programming language or technology and also what I learned and what techniques I used.',
+      imageUrl: 'http://cluster015.ovh.net/~isotopfo/atlanpole-biotherapies/wp-content/uploads/2015/10/picto-radiopharma-800-250x250.png'
+    },{
+      title: 'Link for mt project#',
+      number: 'Link#',
+      headerz: 'Gulp',
+      description: '\n' +
+      'There will be a description of projects in which I used the given programming language or technology and also what I learned and what techniques I used.',
+      imageUrl: 'http://brunch.io/images/others/gulp.png'
+    },{
+      title: 'Link for mt project#',
+      number: 'Link#',
+      headerz: 'JavaScript',
+      description: '\n' +
+      'There will be a description of projects in which I used the given programming language or technology and also what I learned and what techniques I used.',
+      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png'
+    },{
+        title: 'Link for mt project#',
+        number: 'Link#',
+        headerz: 'Node JS',
+        description: '\n' +
+        'There will be a description of projects in which I used the given programming language or technology and also what I learned and what techniques I used.',
+        imageUrl: 'https://cdn2.iconfinder.com/data/icons/nodejs-1/512/nodejs-512.png'
+    },{
+        title: 'Link for mt project#',
+        number: 'Link#',
+        headerz: 'PHP',
+        description: '\n' +
+        'There will be a description of projects in which I used the given programming language or technology and also what I learned and what techniques I used.',
+        imageUrl: 'https://sipexa.com/wp-content/uploads/php-logo.png'
+    },{
+        title: 'Link for mt project#',
+        number: 'Link#',
+        headerz: 'Angular',
+        description: '\n' +
+        'There will be a description of projects in which I used the given programming language or technology and also what I learned and what techniques I used.',
+        imageUrl: 'https://cdn-images-1.medium.com/max/1600/1*nbJ41jD1-r2Oe6FsLjKaOg.png'
+    },{
+        title: 'Link for mt project#',
+        number: 'Link#',
+        headerz: 'Symfony',
+        description: '\n' +
+        'There will be a description of projects in which I used the given programming language or technology and also what I learned and what techniques I used.',
+        imageUrl: 'https://itfan.com.ua/wp-content/uploads/2016/10/symfony-tech.png'
+    },{
+        title: 'Link for mt project#',
+        number: 'Link#',
+        headerz: 'Sass',
+        description: '\n' +
+        'There will be a description of projects in which I used the given programming language or technology and also what I learned and what techniques I used.',
+        imageUrl: 'http://rightblog.ru/wp-content/uploads/2015/09/sass-logo.png'
+    },{
+        title: 'Link for mt project#',
+        number: 'Link#',
+        headerz: 'PUG',
+        description: '\n' +
+        'There will be a description of projects in which I used the given programming language or technology and also what I learned and what techniques I used.',
+        imageUrl: 'https://habrastorage.org/files/556/bf2/66a/556bf266ac414cdaaf99b023a0ff7e7c.png'
+    },{
+        title: 'Link for mt project#',
+        number: 'Link#',
+        headerz: 'MySQL',
+        description: '\n' +
+        'There will be a description of projects in which I used the given programming language or technology and also what I learned and what techniques I used.',
+        imageUrl: 'http://www.bazhukov.net/wp-content/uploads/2015/02/mysql.png'
+    },{
+        title: 'Link for mt project#',
+        number: 'Link#',
+        headerz: 'Mongo DB',
+        description: '\n' +
+        'There will be a description of projects in which I used the given programming language or technology and also what I learned and what techniques I used.',
+        imageUrl: 'https://www.alooma.com/img/integrations/mongodb.png'
+    },{
+        title: 'Link for mt project#',
+        number: 'Link#',
+        headerz: 'Yarn',
+        description: '\n' +
+        'There will be a description of projects in which I used the given programming language or technology and also what I learned and what techniques I used.',
+        imageUrl: 'https://avatars3.githubusercontent.com/u/22247014?s=400&v=4'
+    }],
+    footerData: [{
+        user: 'Aleksandr Myronov',
+        logo: 'svg/github.svg',
+        git: 'https://github.com/AleksandrMyronow',
+        email: 'a.myronow@gmail.com'
+    }]
+  };
+
+  const headerElement = document.querySelector('.top');
+  const bodyElements = document.querySelector('.container');
+  const footerElement = document.querySelector('.down');
+
+  const hElement = React.createElement(HeaderList, options);
+  React.render(hElement, headerElement);
+  const bElement = React.createElement(ThumbnailList, options);
+  React.render(bElement, bodyElements);
+  const dElement = React.createElement(FooterList, options);
+  React.render(dElement, footerElement);
+
+</script>
